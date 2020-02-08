@@ -3,5 +3,5 @@
 
 ![preview](luckysevens_compressed.gif)
 
-* Originally built as a (now deprecated) Java 1.6 Applet in Fall 2011 as a semester project.
+* Originally built as a (now deprecated) Java 1.6 Applet in Fall 2011 as a probability project.
 * Most minimal code change done to convert from an Applet to a Frame on 2/7/2020 since Applet was deprecated in Java 9.
