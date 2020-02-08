@@ -9,15 +9,15 @@ import java.awt.Font;
 import java.awt.*;
 import java.awt.event.*;
 
-public class LuckySe7ens extends Applet implements MouseListener, MouseMotionListener
+public class LuckySe7ens extends Frame implements MouseListener, MouseMotionListener
 {
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = -3596197593839018854L;
 	Random rand = new Random();
-	int width = 800;
-	int	height	= 600;
+	static int width = 800;
+	static int	height	= 600;
 
 	int fontSize = 20;
 
@@ -75,10 +75,12 @@ public class LuckySe7ens extends Applet implements MouseListener, MouseMotionLis
 	boolean overHover = false;
 	boolean againHover = false;
 
-	public void init()
+	public static void main(String args[])
 	{
-		addMouseListener(this);
-		setSize(width, height);
+		LuckySe7ens luckySe7ens = new LuckySe7ens();
+		luckySe7ens.addMouseListener(luckySe7ens);
+		luckySe7ens.setSize(width, height);
+		luckySe7ens.setVisible(true);
 	}
 
 	public void paint(Graphics g)
@@ -234,7 +236,7 @@ public class LuckySe7ens extends Applet implements MouseListener, MouseMotionLis
 
 	public void drawDie(Graphics g, int x, int y, int dice)
 	{
-		Image die = new ImageIcon(this.getClass().getResource("/res/Die/" + dice + ".png")).getImage();
+		Image die = new ImageIcon(this.getClass().getResource("res/Die/" + dice + ".png")).getImage();
 		Graphics2D g2d = (Graphics2D) g;
 		g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
                     RenderingHints.VALUE_ANTIALIAS_ON);
@@ -243,7 +245,7 @@ public class LuckySe7ens extends Applet implements MouseListener, MouseMotionLis
 
 	public void drawLogo(Graphics g, int x, int y)
 	{
-		Image logo = new ImageIcon(this.getClass().getResource("/res/luckyse7ens.png")).getImage();
+		Image logo = new ImageIcon(this.getClass().getResource("res/luckyse7ens.png")).getImage();
 		Graphics2D g2d = (Graphics2D) g;
 		g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
                     RenderingHints.VALUE_ANTIALIAS_ON);
